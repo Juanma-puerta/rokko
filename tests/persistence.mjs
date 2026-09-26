@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import { createDatabase } from '../server/db.js';
+const first=await createDatabase();
+const expected=(await first.query('SELECT id,total,status FROM orders ORDER BY id')).rows;
+assert.ok(expected.length>0,'Ejecutar antes la prueba del navegador para generar una venta.');
+await first.close();
+const reopened=await createDatabase();
+assert.deepEqual((await reopened.query('SELECT id,total,status FROM orders ORDER BY id')).rows,expected);
+await reopened.close();
+console.log(`Persistencia OK: ${expected.length} pedidos recuperados desde PostgreSQL local.`);
