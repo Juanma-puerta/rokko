@@ -2,6 +2,8 @@
 
 Aplicación React + Bulma, API Node.js/Express, PostgreSQL y sesiones JWT revocables. Interfaz en español, importes en ARS y comprobantes internos sin validez fiscal.
 
+Para retomar el trabajo desde otra computadora o conversación, leer [CONTEXTO.md](CONTEXTO.md) (requisitos, decisiones y pendientes) y [AGENTS.md](AGENTS.md) (guía para trabajar con Codex). Estos documentos se versionan junto al código; el chat y la base local no se sincronizan mediante Git.
+
 ## Ejecutar en desarrollo
 
 Requiere Node.js 22.12 o superior.
